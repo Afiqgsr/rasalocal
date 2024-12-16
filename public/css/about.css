@@ -1,0 +1,402 @@
+/* Gaya Global */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #4a2b12;
+  background-color: #f9f4ef;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Navbar Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #4a2b12;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-left: 10px;
+  color: #fff;
+}
+
+.logo-image {
+  width: 40px; /* Ukuran logo Laravel disesuaikan */
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Menu Navigasi */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu li {
+  margin: 0;
+}
+
+.nav-menu a {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #fff;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu .active {
+  color: #ffc107;
+  font-weight: 600;
+  transform: scale(1.1);
+}
+
+.navbar-right .nav-icon {
+  background: #ffc107;
+  color: #4a2b12;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.navbar-right .nav-icon:hover {
+  background: #e3a807;
+}
+
+/* Bagian About */
+.about {
+  padding: 80px 20px 40px;
+  text-align: center;
+  background: linear-gradient(to right, #f9f4ef, #fcebc8);
+}
+
+.about h1 {
+  font-size: 2.5rem;
+  color: #4a2b12;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: fadeIn 1s ease-out;
+}
+
+.about p {
+  font-size: 1.2rem;
+  color: #6e4f33;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Bagian Tim */
+.team {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.team h2 {
+  font-size: 2.5rem;
+  color: #4a2b12;
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: fadeIn 1s ease-out;
+}
+
+.team-members {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  background-color: #fff;
+  padding: 20px;
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 1.5s ease-out forwards;
+  display: flex; /* Menambahkan flex untuk memudahkan pemusatan */
+  flex-direction: column;
+  align-items: center; /* Memusatkan konten secara horizontal */
+  justify-content: center; /* Memusatkan konten secara vertikal */
+}
+
+.team-member img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #4a2b12;
+  display: block; /* Memastikan gambar tampil sebagai block untuk pemusatan */
+  margin-left: auto; /* Margin otomatis untuk memusatkan gambar */
+  margin-right: auto; /* Margin otomatis untuk memusatkan gambar */
+}
+
+
+.team-member:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.team-member:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.team-member:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.team-member h3 {
+  font-size: 1.5rem;
+  color: #4a2b12;
+  margin-bottom: 10px;
+}
+
+.team-member p {
+  font-size: 1rem;
+  color: #6e4f33;
+}
+
+/* Footer */
+footer {
+  background-color: #4a2b12;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content p {
+  margin: 5px 0;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Gaya Global untuk Navigasi */
+nav {
+  background-color: #4a2b12;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Gaya Logo */
+nav .logo {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+nav .logo-image {
+  width: 40px; /* Ukuran logo Laravel disesuaikan */
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Kontainer Menu */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Gaya Item Menu */
+.nav-menu li {
+  margin: 0;
+}
+
+.nav-menu a {
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  padding: 10px 20px;
+  transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efek Hover */
+.nav-menu a:hover {
+  color: #ffc107;
+  background-color: rgba(255, 193, 7, 0.2);
+  border-radius: 4px;
+  transform: scale(1.1);
+}
+
+/* Gaya Link Aktif */
+.nav-menu a.active {
+  color: #ffc107;
+  font-weight: bold;
+  border-bottom: 2px solid #ffc107;
+}
+
+/* Gaya Dropdown */
+nav .dropdown-content {
+  background-color: #3a1f0e;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
+}
+
+nav .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Gaya Item Dropdown */
+nav .dropdown-content a {
+  color: #fff;
+  padding: 10px;
+  text-transform: none;
+}
+
+nav .dropdown-content a:hover {
+  background-color: #e3a807;
+  transform: scale(1.05);
+}
+
+/* Menu Mobile (Hamburger) */
+@media (max-width: 768px) {
+  nav {
+      padding: 10px 15px;
+  }
+
+  .nav-menu {
+      flex-direction: column;
+      gap: 15px;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: #4a2b12;
+      padding: 20px;
+      display: none;
+  }
+
+  .nav-menu.active {
+      display: block;
+  }
+
+  .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 25px;
+      cursor: pointer;
+  }
+
+  .hamburger div {
+      width: 30px;
+      height: 4px;
+      background-color: #fff;
+      transition: all 0.3s ease;
+  }
+
+  .hamburger.open div:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.open div:nth-child(2) {
+      opacity: 0;
+  }
+
+  .hamburger.open div:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .hamburger.active .hamburger div {
+      background-color: #ffc107;
+  }
+}
+
+/* Efek Sticky Navbar */
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.sticky-nav.scrolled {
+  background-color: rgba(74, 43, 18, 0.9);
+}
+
+/* Desain Responsif */
+@media (max-width: 768px) {
+  .hamburger {
+      display: flex;
+  }
+}

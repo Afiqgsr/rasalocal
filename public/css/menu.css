@@ -1,0 +1,534 @@
+/* Global Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #4a2b12;
+  background-color: #f9f4ef;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Header Navbar Sticky */
+header {
+  position: fixed; /* Use fixed positioning instead of sticky */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure it stays on top */
+  background-color: #4a2b12;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  padding: 0; /* No padding around the header */
+  margin: 0; /* Remove any default margin */
+}
+
+/* Navbar Content */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px; /* Padding for spacing within the navbar */
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-left: 10px;
+  color: #fff;
+}
+
+.logo-image {
+  width: 50px;
+  border-radius: 50%;
+  height: 50px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu li {
+  margin: 0;
+}
+
+.nav-menu a {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu .active {
+  color: #ffc107;
+  font-weight: 600;
+}
+
+.navbar-right .nav-icon {
+  background: #ffc107;
+  color: #4a2b12;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.navbar-right .nav-icon:hover {
+  background: #e3a807;
+}
+
+/* Menu Section */
+.menu {
+  padding: 40px 20px;
+  text-align: center;
+  padding-top: 80px; /* Adjust padding top to account for fixed navbar */
+  background-color: #f5e4c3;
+}
+
+.menu h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4a2b12;
+  margin-bottom: 20px;
+}
+
+.menu p {
+  font-size: 1.1rem;
+  color: #6e4f33;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Search Bar */
+.search-container {
+  margin-bottom: 30px;
+}
+
+.search-container input {
+  padding: 10px;
+  font-size: 1rem;
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Adjust menu grid to prevent wrapping */
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  align-items: stretch; /* Ensure items align properly */
+  background-color: #f5e4c3;
+}
+
+/* Card styling */
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-basis: 280px; /* Makes sure each card has a minimum width */
+  max-width: 320px; /* You can adjust the max width as needed */
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  color: #4a2b12;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #6e4f33;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.card .price {
+  font-size: 1.3rem;
+  color: #d67e22;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.card .btn {
+  text-decoration: none;
+  background-color: #ffc107;
+  color: #4a2b12;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.card .btn:hover {
+  background-color: #e3a807;
+  transform: scale(1.05);
+}
+
+.card .btn:active {
+  transform: scale(0.98);
+}
+
+/*Cart*/
+/* Cart Section */
+.cart {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #fff6e5;
+  border-radius: 12px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cart h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4a2b12;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Cart Items */
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 15px;
+  border: 1px solid #ddd;
+}
+
+.cart-item .cart-details {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.cart-item .cart-details h3 {
+  font-size: 1.2rem;
+  color: #4a2b12;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.cart-item .cart-details p {
+  font-size: 1rem;
+  color: #6e4f33;
+  margin: 0;
+}
+
+.cart-item button {
+  background-color: #ff6347;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-item button:hover {
+  background-color: #e5533d;
+}
+
+/* Total Price Section */
+#cartTotal {
+  text-align: right;
+  margin-top: 20px;
+}
+
+#cartTotal h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4a2b12;
+}
+
+/* Checkout Button */
+.cart .btn {
+  display: block;
+  background-color: #ffc107;
+  color: #4a2b12;
+  padding: 12px;
+  font-size: 1.2rem;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 100%;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart .btn:hover {
+  background-color: #e3a807;
+  transform: scale(1.02);
+}
+
+.cart .btn:active {
+  transform: scale(0.98);
+}
+
+/* Empty Cart */
+#cartContainer p {
+  font-size: 1rem;
+  color: #6e4f33;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cart {
+      padding: 15px;
+  }
+
+  .cart-item img {
+      width: 50px;
+      height: 50px;
+  }
+
+  .cart-item .cart-details h3 {
+      font-size: 1rem;
+  }
+
+  .cart-item .cart-details p {
+      font-size: 0.9rem;
+  }
+
+  .cart .btn {
+      font-size: 1rem;
+  }
+}
+
+
+
+/* Footer */
+footer {
+  background-color: #4a2b12;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+footer p {
+  font-size: 1rem;
+}
+
+/* Global Styles for Navigation */
+nav {
+  background-color: #4a2b12;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Logo Styling */
+nav .logo {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+nav .logo-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Menu Container */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Menu Item Styling */
+.nav-menu li {
+  margin: 0;
+}
+
+.nav-menu a {
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  padding: 10px 20px;
+  transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover Effect */
+.nav-menu a:hover {
+  color: #ffc107;
+  background-color: rgba(255, 193, 7, 0.2);
+  border-radius: 4px;
+  transform: scale(1.1);
+}
+
+/* Active Link Styling */
+.nav-menu a.active {
+  color: #ffc107;
+  font-weight: bold;
+  border-bottom: 2px solid #ffc107;
+}
+
+/* Dropdown Styling */
+nav .dropdown-content {
+  background-color: #3a1f0e;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
+}
+
+nav .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Dropdown Item Styling */
+nav .dropdown-content a {
+  color: #fff;
+  padding: 10px;
+  text-transform: none;
+}
+
+nav .dropdown-content a:hover {
+  background-color: #e3a807;
+  transform: scale(1.05);
+}
+
+/* Mobile Menu (Hamburger) */
+@media (max-width: 768px) {
+  nav {
+      padding: 10px 15px;
+  }
+  
+  .nav-menu {
+      flex-direction: column;
+      gap: 15px;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: #4a2b12;
+      padding: 20px;
+      display: none;
+  }
+
+  .nav-menu.active {
+      display: block;
+  }
+
+  .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 25px;
+      cursor: pointer;
+  }
+
+  .hamburger div {
+      width: 30px;
+      height: 4px;
+      background-color: #fff;
+      transition: all 0.3s ease;
+  }
+
+  .hamburger.open div:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.open div:nth-child(2) {
+      opacity: 0;
+  }
+
+  .hamburger.open div:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .hamburger.active .hamburger div {
+      background-color: #ffc107;
+  }
+}
+
+/* Navbar sticky effect */
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.sticky-nav.scrolled {
+  background-color: rgba(74, 43, 18, 0.9);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hamburger {
+      display: flex;
+  }
+}
