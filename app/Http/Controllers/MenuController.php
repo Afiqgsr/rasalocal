@@ -6,9 +6,25 @@ use App\Models\Menus;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreMenuRequest;
 use Illuminate\Support\Facades\Storage;
+use App\Models\User;
+use Spatie\Permission\Models\Role;
 
 class MenuController extends Controller
 {
+
+    public function makeAdmin()
+    {
+        // Cari user dengan ID 1
+        $user = User::find(1);
+
+        // Cek apakah role admin sudah ada, jika belum buat
+        $role = Role::firstOrCreate(['name' => 'admin']);
+
+        // Assign role admin ke user
+        $user->assignRole($role);
+
+        return "User dengan ID 1 telah menjadi admin.";
+    }
     // Tampilkan halaman menu
     public function index()
     {

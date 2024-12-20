@@ -9,5 +9,12 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nama', 'deskripsi', 'harga', 'foto'];
+    // Nama tabel jika berbeda
+    protected $table = 'menus';
+
+    // Kolom yang dapat diisi secara massal
+    protected $fillable = ['title', 'description', 'price', 'image'];
+
+    // Mengizinkan pengaturan timestamps
+    public $timestamps = true;
 }

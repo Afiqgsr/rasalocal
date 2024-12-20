@@ -1,6 +1,6 @@
 @extends('layouts.contacts')
 
-@section('title', 'About')
+@section('title', 'Contact Us')
 
 @section('content')
     <!-- Contact Section -->
@@ -16,7 +16,7 @@
 
         <div class="contact-form">
             <h2>Or, send us a message</h2>
-            <form action="" method="POST">
+            <form id="contactForm" method="POST">
                 @csrf
                 <label for="name">Your Name</label>
                 <input type="text" id="name" name="name" required placeholder="Enter your name">
@@ -38,4 +38,29 @@
         </div>
     </section>
 
-    @endsection
+    <script>
+        // Menangani form submit untuk mengirimkan pesan ke WhatsApp
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form dari submit default
+
+            // Mendapatkan nilai dari form
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+
+            // Membuat pesan yang ingin dikirim ke WhatsApp dengan format yang rapi
+            var whatsappMessage = encodeURIComponent(
+                'Halo, saya ingin menghubungi Anda. Berikut adalah informasi saya:\n\n' +
+                'Nama: ' + name + '\n' +
+                'Email: ' + email + '\n' +
+                'Pesan: ' + message
+            );
+
+            // URL WhatsApp dengan pesan
+            var whatsappUrl = 'https://wa.me/+6285604030757?text=' + whatsappMessage;
+
+            // Redirect ke WhatsApp
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
+@endsection

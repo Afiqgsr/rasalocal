@@ -1,0 +1,350 @@
+
+/* Global Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  background-color: #f9f4ef;
+}
+main{
+    background-color: #f5e4c3;
+    height: 75vh;
+}
+.container {
+    width: 100%; /* Lebar kontainer */
+    margin: 0 auto; /* Memusatkan kontainer secara horizontal */
+    padding: 20px; /* Memberikan padding di dalam kontainer */
+    text-align: center; /* Memusatkan teks di dalam kontainer */
+  }
+  
+  h2 {
+    font-size: 24px; /* Ukuran font untuk judul */
+    font-weight: bold; /* Membuat judul lebih tebal */
+    color: #333; /* Warna teks */
+    margin-bottom: 20px; /* Memberikan jarak bawah pada judul */
+  }
+  
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Table Styles */
+table {
+  width: 150vh;
+  align-items: center;
+  border-collapse: collapse;
+  margin: 30px 0 0 50px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #4a2b12;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+table td {
+  background-color: #f9f4ef;
+  color: #6e4f33;
+  font-size: 1rem;
+}
+
+table tr:nth-child(even) td {
+  background-color: #f3e7d7;
+}
+
+
+/* Button Styles in Actions */
+button, a {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+button {
+  background-color: #ff6347;
+  color: #fff;
+  border: none;
+}
+
+button:hover {
+  background-color: #e5533d;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+a:hover {
+  background-color: #e3a807;
+  transform: scale(1.05);
+}
+
+/* Form Action Buttons */
+form button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ff6347;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #e5533d;
+}
+
+/* Header Navbar Sticky */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #4a2b12;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-left: 10px;
+  color: #fff;
+}
+
+.logo-image {
+  width: 50px;
+  border-radius: 50%;
+  height: 50px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu li {
+  margin: 0;
+}
+
+.nav-menu a {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu .active {
+  color: #ffc107;
+  font-weight: 600;
+}
+
+.navbar-right .nav-icon {
+  background: #ffc107;
+  color: #4a2b12;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.navbar-right .nav-icon:hover {
+  background: #e3a807;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 20px;
+  background: #f5e4c3;
+}
+
+.hero-content {
+  max-width: 70%;
+  padding: 100px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #4a2b12;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+.shop-now {
+  background-color: #ffc107;
+  color: #4a2b12;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.shop-now:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.explore {
+  background-color: transparent;
+  color: #4a2b12;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 2px solid #4a2b12;
+  border-radius: 5px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.explore:hover {
+  background-color: #4a2b12;
+  color: #ffc107;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-image {
+  max-width: 40%;
+  text-align: center;
+}
+
+.hero-image img {
+  border-radius: 15px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+h4{
+    color: black;
+    padding: 10px 11vh 10px;
+    
+}
+/* Footer */
+footer {
+  background-color: #4a2b12;
+  color: #fff;
+  padding: 30px 40px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.social-links img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+  transform: scale(1.2);
+}
+.btn-primary {
+    background-color:#ff6347; /* Mengubah warna latar belakang menjadi hijau */
+    color: white; /* Mengubah warna teks menjadi putih */
+    margin: 0 11vh 0 0;
+  }
+  
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  table th, table td {
+      padding: 10px;
+  }
+
+  table {
+      font-size: 0.9rem;
+  }
+
+  button, a {
+      font-size: 0.9rem;
+      padding: 6px 12px;
+  }
+
+  .hero {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .hero-content {
+      max-width: 100%;
+  }
+
+  .hero-image {
+      max-width: 100%;
+      margin-top: 20px;
+  }
+
+  #custom-navigation {
+      background-color: #123456;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  #custom-navigation a {
+      color: #ffffff;
+  }
+}

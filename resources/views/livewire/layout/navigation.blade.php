@@ -30,33 +30,31 @@ new class extends Component
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex nav-menu">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Home') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('menu.index')" :active="request()->routeIs('menu.index')" wire:navigate>
+                    <x-nav-link :href="route('menu.index')" :active="request()->routeIs('menu.index')">
                         {{ __('Menu') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('about')" :active="request()->routeIs('about')" wire:navigate>
+                    <x-nav-link :href="route('cart.index')" :active="request()->routeIs('cart.index')">
+                        {{ __('Keranjang') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
                         {{ __('About') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')" wire:navigate>
+                    <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
                         {{ __('Contact') }}
                     </x-nav-link>
 
-                    @can('Manage Menu')
-                    <x-nav-link :href="route('crud.index')" :active="request()->routeIs('crud.index')" wire:navigate>
+                   
+                    <x-nav-link :href="route('crud.index')" :active="request()->routeIs('crud.index')">
                         {{ __('CRUD') }}
                     </x-nav-link>
-                    @endcan
-
-
-                    <!-- Form to navigate to Menu page -->
-                    <form action="{{ route('menu.index') }}" method="GET" class="flex items-center">
-                       
-                    </form>
+                   
                 </div>
             </div>
 
@@ -65,13 +63,11 @@ new class extends Component
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
-                            <!-- Cek apakah pengguna sudah login -->
                             @auth
-                                <div x-data="{{ json_encode(['name' => auth()->user()->name]) }}" x-text="name" x-on:profile-updated.window="name = $event.detail.name"></div>
+                                <div x-data="{ name: '{{ auth()->user()->name }}' }" x-text="name" x-on:profile-updated.window="name = $event.detail.name"></div>
                             @else
-                                <div x-text="'Guest'"></div> <!-- Tampilkan 'Guest' jika pengguna belum login -->
+                                <div x-text="'Guest'"></div>
                             @endauth
-
                             <div class="ms-1">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -87,12 +83,19 @@ new class extends Component
                             </x-dropdown-link>
                         @endauth
 
-                        <!-- Authentication -->
-                        <button wire:click="logout" class="w-full text-start">
-                            <x-dropdown-link>
-                                {{ __('Log Out') }}
+                        @auth
+                            <button wire:click="logout" class="w-full text-start">
+                                <x-dropdown-link>
+                                    {{ __('Log Out') }}
+                                </x-dropdown-link>
+                            </button>
+                        @endauth
+
+                        @guest
+                            <x-dropdown-link :href="route('login')" wire:navigate>
+                                {{ __('Login') }}
                             </x-dropdown-link>
-                        </button>
+                        @endguest
                     </x-slot>
                 </x-dropdown>
             </div>
@@ -120,6 +123,10 @@ new class extends Component
                 {{ __('Menu') }}
             </x-responsive-nav-link>
 
+            <x-responsive-nav-link :href="route('cart.index')" :active="request()->routeIs('cart.index')" wire:navigate>
+                {{ __('Keranjang') }}
+            </x-responsive-nav-link>
+
             <x-responsive-nav-link :href="route('about')" :active="request()->routeIs('about')" wire:navigate>
                 {{ __('About') }}
             </x-responsive-nav-link>
@@ -128,26 +135,31 @@ new class extends Component
                 {{ __('Contact') }}
             </x-responsive-nav-link>
 
-            @can('Manage Menu')   
+            
             <x-responsive-nav-link :href="route('crud.index')" :active="request()->routeIs('crud.index')" wire:navigate>
                 {{ __('CRUD') }}
             </x-responsive-nav-link>
-            @endcan
-            
+           
         </div>
 
         <!-- Responsive Settings Options -->
         <div class="mt-3 space-y-1">
-            <x-responsive-nav-link :href="route('profile')" wire:navigate>
-                {{ __('Profile') }}
-            </x-responsive-nav-link>
-
-            <!-- Authentication -->
-            <button wire:click="logout" class="w-full text-start">
-                <x-responsive-nav-link>
-                    {{ __('Log Out') }}
+            @auth
+                <x-responsive-nav-link :href="route('profile')" wire:navigate>
+                    {{ __('Profile') }}
                 </x-responsive-nav-link>
-            </button>
+                <button wire:click="logout" class="w-full text-start">
+                    <x-responsive-nav-link>
+                        {{ __('Log Out') }}
+                    </x-responsive-nav-link>
+                </button>
+            @endauth
+
+            @guest
+                <x-responsive-nav-link :href="route('login')" wire:navigate>
+                    {{ __('Login') }}
+                </x-responsive-nav-link>
+            @endguest
         </div>
     </div>
 </nav>
