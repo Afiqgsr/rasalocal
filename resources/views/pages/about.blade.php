@@ -16,17 +16,17 @@
             <div class="team-member">
                 <img src="{{ asset('images/aku.jpg') }}" alt="Anggota Tim 1" class="team-photo">
                 <h3>Afiq Galuh Setya Ramadhani</h3>
-                <p>Deskripsi singkat tentang anggota tim 1.</p>
+                <p>Back End.</p>
             </div>
             <div class="team-member">
                 <img src="{{ asset('images/nab.jpg') }}" alt="Anggota Tim 2" class="team-photo">
                 <h3>Nabila Carrissa Dewi</h3>
-                <p>Deskripsi singkat tentang anggota tim 2.</p>
+                <p>Front End</p>
             </div>
             <div class="team-member">
-                <img src="{{ asset('images/aku.jpg') }}" alt="Anggota Tim 3" class="team-photo">
+                <img src="{{ asset('images/azizah.jpg') }}" alt="Anggota Tim 3" class="team-photo">
                 <h3>Nur Azizah Pagorante</h3>
-                <p>Deskripsi singkat tentang anggota tim 3.</p>
+                <p>Project Manager</p>
             </div>
         </div>
     </section>

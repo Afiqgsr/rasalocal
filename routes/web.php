@@ -6,6 +6,7 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\Auth\LoginController;
 
+
 Route::view('/', 'welcome');
 Route::get('/menu/search', [MenuController::class, 'search'])->name('menu.search');
 
@@ -48,7 +49,7 @@ Route::middleware(['web'])->group(function () {
 });
 
 // Dashboard dan Profile
-Route::middleware(['auth'])->get('/dashboard', function () {
+Route::middleware(['auth', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
@@ -62,5 +63,9 @@ Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 
 // Membuat Admin
 Route::get('/make-admin', [MenuController::class, 'makeAdmin']);
+
+Route::get('/crud/trashed', [MenuController::class, 'trashed'])->name('crud.trashed');
+Route::put('/crud/{id}/restore', [MenuController::class, 'restore'])->name('crud.restore');
+Route::delete('/crud/{id}/force-delete', [MenuController::class, 'forceDelete'])->name('crud.force-delete');
 
 require __DIR__.'/auth.php';

@@ -8,12 +8,11 @@
 @if(auth()->user()->hasRole('admin'))
     <p>Selamat datang, Admin!</p>
 
-    <!-- Tombol Tambah -->
-   
-        <div class="mb-4">
-            <a href="{{ route('crud.create') }}" class="btn btn-primary">Tambah Menu Baru</a>
-        </div>
-    
+    <!-- Tombol Tambah dan Lihat Data Terhapus -->
+    <div class="mb-4 d-flex justify-content-between">
+        <a href="{{ route('crud.create') }}" class="btn btn-primary">Tambah Menu Baru</a>
+        <a href="{{ route('crud.trashed') }}" class="btn btn-secondary">Lihat Data Terhapus</a>
+    </div>
 
     <!-- Tabel Data -->
     <table class="table table-striped table-hover">

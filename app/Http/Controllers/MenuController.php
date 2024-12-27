@@ -171,4 +171,33 @@ class MenuController extends Controller
          $menu->delete();
          return redirect()->route('crud.index')->with('success', 'Menu berhasil dihapus.');
      }
-}
+     public function trashed()
+     {
+         $trashedItems = Menus::onlyTrashed()->get(); // Ambil data yang telah dihapus
+         return view('pages.trashed', compact('trashedItems'));
+     }
+     
+     // Restore data menu yang telah dihapus
+     public function restore($id)
+     {
+         $menu = Menus::onlyTrashed()->findOrFail($id); // Cari data berdasarkan ID di data yang terhapus
+         $menu->restore(); // Pulihkan data
+     
+         return redirect()->route('crud.index')->with('success', 'Menu berhasil dipulihkan.');
+     }
+     
+     // Hapus permanen data menu
+     public function forceDelete($id)
+     {
+         $menu = Menus::onlyTrashed()->findOrFail($id);
+         
+         // Hapus file gambar jika ada
+         if ($menu->image) {
+             Storage::disk('public')->delete($menu->image);
+         }
+     
+         $menu->forceDelete(); // Hapus permanen
+     
+         return redirect()->route('crud.index')->with('success', 'Menu berhasil dihapus secara permanen.');
+     }
+    }
